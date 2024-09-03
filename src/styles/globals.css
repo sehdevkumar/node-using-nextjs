@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* styles/globals.css */
+
+.markdown-content {
+    @apply prose;
+    /* This applies Tailwind's typography styles */
+}
+
+/* If you want to customize further, you can override specific styles */
+.markdown-content h1 {
+    @apply text-3xl font-bold;
+}
+
+.markdown-content p {
+    @apply mb-4;
+    color: #FFFFFF;
+}
+.markdown-content pre {
+     background: #191919;
+     width: 100%;
+     max-width: inherit;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4),
+     0 1px 3px rgba(0, 0, 0, 0.2);
+
+}
+/* Add more styles as needed */
+
+
+/* Custom Scrollbar for Webkit Browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #191919;
+}
+
+/* Custom Scrollbar for Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+/* Custom Scrollbar for Internet Explorer and Edge */
+body {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
