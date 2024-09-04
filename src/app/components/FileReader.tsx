@@ -2,10 +2,10 @@ import fs from "fs";
 import path from "path";
 import { remark } from "remark";
 import html from "remark-html";
-export default async function FileReader() {
+export default async function FileReader({fileName}:{fileName:string}) {
   try {
     // Define the path to the Markdown file
-    const filePath = path.join(process.cwd(), "README.md");
+    const filePath = path.join(process.cwd() + '/content', fileName);
 
     // Read the Markdown file
     const fileContents = fs.readFileSync(filePath, "utf8");

@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+
+/content
 /.pnp
 .pnp.js
 
@@ -24,6 +26,7 @@ next-env.d.ts
 # misc
 .DS_Store
 *.pem
+
 
 # debug
 npm-debug.log*

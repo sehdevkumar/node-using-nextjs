@@ -1,9 +1,20 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import ReadDirectory from "~/lib/ReadDirectory";
 import FileReader from "./FileReader";
 
 // src/components/Terminal.tsx
-export default function Terminal() {
+export default async function Terminal() {
+   
+  const files = await ReadDirectory()
+
+
+     
+
+
+
   return (
-    <div className="mx-auto w-full h-full overflow-hidden rounded-lg bg-gray-900 p-4 font-mono text-white shadow-lg">
+    <div className="mx-auto h-full w-full overflow-hidden rounded-lg bg-gray-900 p-4 font-mono text-white shadow-lg">
       {/* Top bar with colored circles */}
       <div className="mb-2 flex items-center">
         <div className="flex space-x-2">
@@ -14,8 +25,12 @@ export default function Terminal() {
       </div>
 
       {/* Terminal content */}
-      <div className="rounded-lg h-[calc(100%-20px)]  p-4 overflow-auto grid">
-          <FileReader/>
+      <div className="grid h-[calc(100%-20px)] overflow-auto rounded-lg p-4">
+         {
+          files.map((f,i)=> {
+             return <FileReader key={i} fileName={f.filename}/>;
+          })
+         }
       </div>
     </div>
   );
